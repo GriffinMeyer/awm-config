@@ -241,7 +241,6 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
             volume.widget,
             wibox.widget.systray(),
             mytextclock,
@@ -354,7 +353,7 @@ globalkeys = gears.table.join(
               {description = "restore minimized", group = "client"}),
 
     -- Prompt
-    awful.key({ modkey }, "r", function () os.execute("rofi -show run")
+    awful.key({ modkey }, "r", function () os.execute("rofi -show drun")
     end,
               {description = "run prompt", group = "launcher"}),
 
@@ -520,7 +519,7 @@ awful.rules.rules = {
 
     -- Add titlebars to normal clients and dialogs
     { rule_any = {type = { "normal", "dialog" }
-      }, properties = { titlebars_enabled = true }
+  }, properties = { titlebars_enabled = false }
     },
 
     -- Set Firefox to always map on the tag named "2" on screen 1.
