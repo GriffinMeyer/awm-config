@@ -491,6 +491,21 @@ awful.rules.rules = {
      }
     },
 
+    { rule = {
+        class = "jetbrains-.*",
+        instance = "sun-awt-X11-XWindowPeer",
+        name = "win.*"
+    },
+      properties = {
+        floating = true,
+        focus = true,
+        focusable = false,
+        ontop = true,
+        placement = awful.placement.restore,
+        buttons = {}
+     }
+    },
+
     -- Floating clients.
     { rule_any = {
         instance = {
