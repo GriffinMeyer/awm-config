@@ -505,6 +505,19 @@ awful.rules.rules = {
         buttons = {}
      }
     },
+    { rule = {
+        class = "jetbrains-.*",
+        instance = "sun-awt-X11-XDialogPeer",
+    },
+      properties = {
+        floating = true,
+        focus = true,
+        focusable = false,
+        ontop = true,
+        placement = awful.placement.restore,
+        buttons = {}
+     }
+    },
 
     -- Floating clients.
     { rule_any = {
