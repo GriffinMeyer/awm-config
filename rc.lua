@@ -208,7 +208,7 @@ awful.screen.connect_for_each_screen(function(s)
     set_wallpaper(s)
 
     -- Each screen has its own tag table.
-    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[1])
+    awful.tag({ "1", "2", "3", "4", "5", "6", "7", "8", "9" }, s, awful.layout.layouts[2])
 
     -- Create a promptbox for each screen
     s.mypromptbox = awful.widget.prompt()
@@ -512,7 +512,7 @@ awful.rules.rules = {
       properties = {
         floating = true,
         focus = true,
-        focusable = false,
+        focusable = true,
         ontop = true,
         placement = awful.placement.restore,
         buttons = {}
@@ -553,6 +553,8 @@ awful.rules.rules = {
     -- Set Firefox to always map on the tag named "2" on screen 1.
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
+    { rule = { class = "Slack" },
+      properties = { screen = 2, tag = "1" } },
 }
 -- }}}
 
@@ -626,4 +628,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.util.spawn_with_shell("xscreensaver -no-splash")
 awful.util.spawn_with_shell("/home/griffin/.screenlayout/default-layout.sh")
 awful.util.spawn_with_shell("compton")
+awful.util.spawn_with_shell("wmname LG3D")
 -- }}}
