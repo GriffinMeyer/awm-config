@@ -505,19 +505,19 @@ awful.rules.rules = {
         buttons = {}
      }
     },
-    { rule = {
-        class = "jetbrains-.*",
-        instance = "sun-awt-X11-XDialogPeer",
-    },
-      properties = {
-        floating = true,
-        focus = true,
-        focusable = true,
-        ontop = true,
-        placement = awful.placement.restore,
-        buttons = {}
-     }
-    },
+    -- { rule = {
+    --     class = "jetbrains-.*",
+    --     instance = "sun-awt-X11-XDialogPeer",
+    -- },
+    --   properties = {
+    --     floating = true,
+    --     focus = true,
+    --     focusable = false,
+    --     ontop = true,
+    --     placement = awful.placement.restore,
+    --     buttons = {}
+    --  }
+    -- },
 
     -- Floating clients.
     { rule_any = {
@@ -554,6 +554,8 @@ awful.rules.rules = {
     -- { rule = { class = "Firefox" },
     --   properties = { screen = 1, tag = "2" } },
     { rule = { class = "Slack" },
+      properties = { screen = 2, tag = "1" } },
+    { rule = { class = "Spotify" },
       properties = { screen = 2, tag = "1" } },
 }
 -- }}}
